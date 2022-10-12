@@ -1,14 +1,15 @@
-import "./App.css"
+import {Routes, Route} from "react-router-dom"
+import "../src/App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import HeaderComponent from "./components/HeaderComponent"
-import FooterComponent from "./components/FooterComponent"
-import MainComponent from "./components/MainComponent"
+import KeywordPage from "./pages/KeywordPage"
+import DisclamerPage from "./pages/DisclamerPage"
 function App() {
 	return (
 		<div className="App">
-			<HeaderComponent />
-			<MainComponent />
-			<FooterComponent />
+			<Routes>
+				<Route path="/" element={<KeywordPage />} />
+				<Route path="disclamer" element={<DisclamerPage />} />
+			</Routes>
 		</div>
 	)
 }

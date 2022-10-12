@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@font-face {
+	font-family: digimonFont;
+	src: url("../fonts/pixel-digivolve-font/PixelDigivolve-mOm9.ttf")
+		format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: keyword;
+	src: url("../fonts/GoetheGothic/Fonts/goethegothic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.contenedorPrincipal {
+	min-height: 100vh;
+}
+
+.fontTitle {
+	font-family: digimonFont;
+}
+
+.disclamerText {
+	font-size: 20px;
+}

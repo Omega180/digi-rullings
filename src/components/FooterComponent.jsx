@@ -3,16 +3,28 @@ import "../stylesheets/FooterComponent.css"
 
 function FooterComponent() {
 	return (
-		<footer className="footer">
-			<div className="container containerFooter">
-				<a href="https://world.Digimoncard.com/rule/pdf/general_rules.pdf?210521">
-					Official Translations
+		<footer className="footer d-flex justify-content-between align-items-center">
+			<div className="container d-flex justify-content-between align-items-center linksContainer">
+				<a href="https://world.digimoncard.com/" className="linkText">
+					Official Digimon Card Game website
 				</a>
-				<br />
-				<a href="https://game-academia.com/blogs/digimon-card-game-blog/digimon-card-game-general-rules-keyword-effect-armor-purge-q-a-19nov2021?fbclid=IwAR28Zl8AAP3kSWjpJgb4DLMmbAg8uiD-qjXEVP_aHISsy_TTv2YDEf4aeLY">
-					Armor Purge Rullings Translations, done by Jason Snojax
+				<a
+					className="linkText"
+					href="https://world.Digimoncard.com/rule/pdf/general_rules.pdf?210521"
+				>
+					Official Rullings in English
+				</a>
+				<a
+					className="linkText"
+					href="https://digimoncardgame.fandom.com/wiki/DigimonCardGame_Wiki"
+				>
+					The Digimon Card Game Wiki
+				</a>
+				<a className="linkText" href="https://twitter.com/DigiRulings">
+					My Twitter Account
 				</a>
 			</div>
+			<div className="contactFooter"></div>
 		</footer>
 	)
 }
