@@ -57,7 +57,7 @@ function DisclamerComponent() {
 								{pageLanguage === 1
 									? `- This page is pretty much a mirror of the official Q&A file
 									located in the official Digimon Card Game page, including the translated rulings from the wiki
-									(since we still dont have translation for a few keywords). this
+									(since we still dont have translation for a few keywords). This
 									site was made for easy access for myself and my community.`
 									: `- Esta pagina es una traduccion de los reglamentos oficiales que se encuentran en la pagina oficial de Digimon, incluyendo traducciones de los reglamentos que se encuentra en la wiki (ya que no tenemos traduccion oficial de esos rulings), esta pagina fue hecha para mi y mi comunidad local`}
 							</p>
@@ -68,13 +68,13 @@ function DisclamerComponent() {
 							</p>
 							<p className="disclamerText">
 								{pageLanguage === 1
-									? "- IF you are using this website to check rulings during a local tournament, be safe and ask your judge, while all the info here is taken directly from the original source, I would recommend you get a ruling directly from your local judge. I'm not responsible for any misunderstanding caused by misunderstanding any rulings."
+									? "- IF you are using this website to check rulings during a local tournament, play it safe and ask your judge, while all the info here is taken directly from official sources, I would recommend you get a ruling directly from your local judge. I'm not responsible for any misunderstanding caused by misunderstanding any rulings."
 									: "- SI estas usando esta pagina para revisar alguna regla durante un torneo local, te recomendaria que le preguntaras directamente a tu juez, aunque toda la informacion de aca viene directamente de la pagina de bandai, igual te recomendaria que le preguntaras a tu juez local. No me hago responsable de cualquier malentendido que sea generado por no entender los funcionamientos de alguna palabra clave."}
 							</p>
 							<p className="disclamerText">
 								{pageLanguage === 1
-									? "- If you are unsure about a specific rulling and can't ask a local judge I 100% recommend you visit the Digimon TCG 2020 Discord, there's a ton of really specific rulings you can find in the #tcg-rules-and-faqs channel!"
-									: "- Si no estas seguro de algun reglamento especifico o alguna interaccion y no puedes preguntarle a algun juez local, te recomendaria que visitaras el discord de Digimon TCG 2020, ren el canal de #tcg-rules-and-faqs tienen bastantes interacciones especificas (eso si, esta en ingles, asi que ten eso en cuenta)"}
+									? "- If you are unsure about a specific rulling and can't ask a local judge I 100% recommend you visiting the Wiki or the Digimon TCG 2020 Discord, there's a ton of really specific rulings you can find in the #tcg-rules-and-faqs channel !"
+									: "- Si no estas seguro de algun reglamento especifico o alguna interaccion y no puedes preguntarle a algun juez local, te recomendaria que visitaras la wiki o el discord de Digimon TCG 2020, en el canal de #tcg-rules-and-faqs tienen bastantes interacciones especificas (eso si, ambas paginas estan en ingles, asi que ten eso en cuenta)"}
 							</p>
 							<p className="disclamerText">
 								{pageLanguage === 1

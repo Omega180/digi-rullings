@@ -68,6 +68,7 @@
 }
 
 .linkKeyword:hover {
+	background-image: linear-gradient(#4e2c29, #ac4e0b);
 }
 
 .titleRullings {
@@ -153,6 +154,12 @@ input:checked + .slider:before {
 		filter: brightness(1.2);
 		clip-path: polygon(10% 0, 90% 0, 100% 50%, 89% 100%, 10% 100%, 0% 50%);
 		cursor: pointer;
+	}
+	.cardTitle {
+		font-size: 20px;
+	}
+	.cardText {
+		font-size: 15px;
 	}
 }
 

@@ -115,13 +115,13 @@ function MainComponent() {
 						<div className="card-body">
 							<p className={`cardText`}>
 								{pageLanguage === 1
-									? "# Here you can find all the rulings that are available from official sources. If you want to know more about the Keywords, you can find more info at the Fandom page, the link will be at the bottom of the page. You can find more info in the links at the top of the page."
-									: "# Aqui puedes encontrar todos los reglamentos sobre las palabras claves disponibles en la pagina oficial de Digimon. Si quieres saber mas sobre las palabras claves en si, puedes encontrar mas informacion en el link de la pagina de Fandom, el link lo dejare en la parte de abajo de la pagina. Puedes encontrar mas informacion sobre este sitio en el link de info de arriba."}
+									? "# Here you can find all the rulings that are available from official sources. If you want to know more about the Keywords, you can find more info in the Wiki page, the link will be at the bottom of the page. You can find more info in the links at the top of the page."
+									: "# Aqui puedes encontrar todos los reglamentos sobre las palabras claves disponibles en la pagina oficial de Digimon. Si quieres saber mas sobre las palabras claves en si, puedes encontrar mas informacion en el link de la Wiki, el link lo dejare en la parte de abajo de la pagina. Puedes encontrar mas informacion sobre este sitio en el link de info de arriba."}
 							</p>
 							<p className={`cardText`}>
 								{pageLanguage === 1
-									? "# DISCLAMER: Rulings for [Charge/Raid] are not available in any form yet, I will update those when they get released and translated. Also, rulings for Armor Purge, Save, Material Save and Evade are not available at the moment in the official English site, I will be using the translated versions for those, you can find the source in the fandom page, I will be leaving the links at the bottom of the page if you want to check them out."
-									: "# ADVERTENCIA: Los reglamentos de [Charge/Raid] no se encuentran disponibles todavia, cuando salgan los actualizare. Los rulings de Armor Purge, Save, Material Save y Evade no se encuentran disponibles al momento de manera oficial, usaré las versiones traducidas que se encuentran en la pagina Fandom de Digimon por el momento, dejare el link en la parte de abajo de la pagina."}
+									? "# DISCLAMER: Rulings for [Charge/Raid] are not available in any form yet, I will update those when they get released and translated. Also, rulings for Armor Purge, Save, Material Save and Evade are not available at the moment in the official English site, I will be using the translated versions for those, you can find the source in the Wiki page, I will be leaving the links at the bottom of the page if you want to check them out."
+									: "# ADVERTENCIA: Los reglamentos de [Charge/Raid] no se encuentran disponibles todavia, cuando salgan los actualizare. Los rulings de Armor Purge, Save, Material Save y Evade no se encuentran disponibles al momento de manera oficial, usaré las versiones traducidas que se encuentran en la Wiki de Digimon por el momento, dejare el link en la parte de abajo de la pagina."}
 							</p>
 						</div>
 					</div>
