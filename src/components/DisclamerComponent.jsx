@@ -1,7 +1,8 @@
 import React, {useState} from "react"
 import "../stylesheets/DisclamerComponent.css"
+import {useLocation} from "react-router-dom"
 
-function DisclamerComponent() {
+function DisclamerComponent(props) {
 	const [pageLanguage, setPageLanguage] = useState(1)
 	const setLanguage = (e) => {
 		if (pageLanguage === 2) {
@@ -12,6 +13,8 @@ function DisclamerComponent() {
 			setPageLanguage(2)
 		}
 	}
+	const location = useLocation()
+	const {from} = location.state
 
 	return (
 		<div className="container-fluid d-flex justify-content-center disclamerContainer">

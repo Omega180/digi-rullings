@@ -14,7 +14,7 @@ function MainComponent() {
 	const [pageLanguage, setPageLanguage] = useState(1)
 	/* Solicita a la base de datos la lista de Keywords en el momento que se carga la pagina */
 	useEffect(() => {
-		Axios.get("http://localhost:3001/api/keywordList/getEnglish").then(
+		Axios.get("https://api.digirulings.com/api/keywordList/getEnglish").then(
 			(resp) => {
 				setKeywordList(resp.data)
 			}
@@ -22,47 +22,45 @@ function MainComponent() {
 	}, [])
 
 	/* Manejo de keyword y lenguaje para formulario */
-	const handleKeywordChange = (e) => {
+	/* const handleKeywordChange = (e) => {
 		setSelectedKeyword(parseInt(e.target.value))
-		console.log(e.target.value)
+
 	}
 	const handleLanguageChange = (e) => {
 		setSelectedLanguage(parseInt(e.target.value))
-		console.log(e.target.value)
 	}
 	const handleOfficial = (e) => {
 		setSelectedOfficial(e.target.value)
-		console.log(e.target.value)
 	}
 	const handlePregunta = (e) => {
 		setPregunta(e.target.value)
-		console.log(e.target.value)
-	}
 
+	}
+	*/
 	const handleRullingChange = (e) => {
 		setRullingSolicitado(parseInt(e.target.value))
 		obtenerRulling(e)
-		console.log(parseInt(e.target.value))
 	}
+
+	/*
 	const handlePageLanguagechange = (e) => {}
 	/* Funcion de envio de formulario */
-	//
 
-	const enviarRulling = (e) => {
+	/* const enviarRulling = (e) => {
 		e.preventDefault()
-		Axios.post("http://localhost:3001/api/sendRulling", {
+		Axios.post("https://api.digirulings.com/api/sendRulling", {
 			keyword: selectedKeyword,
 			lenguaje: selectedLanguage,
 			oficial: "Yes",
 			pregunta: pregunta,
 			respuesta: respuesta,
 		})
-	}
+	} */
 
 	/* Funcion de Keyword seleccionada */
 	const obtenerRulling = (e) => {
 		if (pageLanguage === 1) {
-			Axios.get("http://localhost:3001/api/getRullings/English", {
+			Axios.get("https://api.digirulings.com/api/getRullings/English", {
 				params: {
 					keywordSeleccionada: e.target.value,
 				},
@@ -71,7 +69,7 @@ function MainComponent() {
 			})
 		}
 		if (pageLanguage === 2) {
-			Axios.get("http://localhost:3001/api/getRullings/Spanish", {
+			Axios.get("https://api.digirulings.com/api/getRullings/Spanish", {
 				params: {
 					keywordSeleccionada: e.target.value,
 				},
@@ -83,10 +81,8 @@ function MainComponent() {
 
 	const setLanguage = (e) => {
 		if (pageLanguage === 2) {
-			console.log(pageLanguage)
 			setPageLanguage(1)
 		} else if (pageLanguage === 1) {
-			console.log(pageLanguage)
 			setPageLanguage(2)
 		}
 	}
@@ -105,9 +101,9 @@ function MainComponent() {
 							</h1>
 							<div className="d-flex justify-content-between align-items-center">
 								<p className="titleRullings m-2">EN</p>
-								<label class="switch">
+								<label className="switch">
 									<input type="checkbox" onClick={setLanguage} />
-									<span class="slider"></span>
+									<span className="slider"></span>
 								</label>
 								<p className="titleRullings m-2">ES</p>
 							</div>
@@ -139,7 +135,10 @@ function MainComponent() {
 					<div className="container d-flex justify-content-center card-body row containerKeyword">
 						{keywordList.map((keyword) => {
 							return (
-								<div className="col-3 d-flex justify-content-center keywordContainer">
+								<div
+									key={`keywordContainer${keyword.keyword_id}`}
+									className="col-3 d-flex justify-content-center keywordContainer"
+								>
 									<button
 										onClick={(e) => {
 											handleRullingChange(e)
@@ -161,7 +160,7 @@ function MainComponent() {
 				{/* Rullings Container */}
 				{rullingsActuales.map((rulling) => {
 					return (
-						<div className="card mt-2 ">
+						<div key={`rulling${rulling.question}`} className="card mt-2 ">
 							<div className="card-title cardTitle m-3">{rulling.question}</div>
 							<div className="card-body mt-3 cardText border">
 								{rulling.answer}

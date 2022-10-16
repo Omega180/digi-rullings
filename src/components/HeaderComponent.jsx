@@ -3,19 +3,7 @@ import "../stylesheets/HeaderComponent.css"
 import logo from "../imgs/logoexample.png"
 import {Link} from "react-router-dom"
 function HeaderComponent() {
-	window.onscroll = function () {
-		scrollFunction()
-	}
-	const navbar = document.getElementsByClassName(".navbar")
-	const sticky = navbar.offsetTop
-
-	function scrollFunction() {
-		if (window.pageYOffset >= sticky) {
-			navbar.classList.add("sticky")
-		} else {
-			navbar.classList.remove("sticky")
-		}
-	}
+	const variable1 = "lorem ipsum"
 
 	return (
 		<header>
@@ -52,6 +40,7 @@ function HeaderComponent() {
 							</Link>
 							<Link
 								to="/disclamer"
+								state={{from: variable1}}
 								className="buttonClass d-flex justify-content-center nav-link active"
 							>
 								Info
