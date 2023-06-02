@@ -120,6 +120,44 @@
 	transition: 0.4s;
 }
 
+.rullingTitle {
+	border-bottom: 2px solid rgb(100, 100, 100);
+	margin-bottom: 10px;
+}
+.rullingExplanation {
+	width: 80%;
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+	border: 1px black;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.rullingText {
+	width: 70%;
+	font-size: 20px;
+}
+
+.rullingDescription {
+	width: 50%;
+	height: 100%;
+}
+
+.rullingImage {
+	display: flex;
+	width: 200px;
+}
+.keywordImage {
+	width: 100%;
+	height: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
 input:checked + .slider {
 	background-color: #2196f3;
 }

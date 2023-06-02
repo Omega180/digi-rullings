@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import "../stylesheets/MainComponent.css"
 import Axios from "axios"
-
+import keywordImages from "../JSObjects/keywordsImages"
 function MainComponent() {
 	const [keywordList, setKeywordList] = useState([])
 	const [selectedKeyword, setSelectedKeyword] = useState(0)
@@ -12,9 +12,15 @@ function MainComponent() {
 	const [rullingsActuales, setRullingsActuales] = useState([])
 	const [rullingSolicitado, setRullingSolicitado] = useState("")
 	const [pageLanguage, setPageLanguage] = useState(1)
+
+	const [keywordSeleccionadaNombre, setKeywordSeleccionadaNombre] = useState()
+	const [keywordSeleccionadaDescrip, setKeywordSeleccionadaDescrip] = useState()
+	const [keywordSeleccionadaDescripEsp, setKeywordSeleccionadaDescripEsp] =
+		useState()
+	const [keywordSeleccionadaId, setKeywordSeleccionadaId] = useState(0)
 	/* Solicita a la base de datos la lista de Keywords en el momento que se carga la pagina */
 	useEffect(() => {
-		Axios.get("https://api.digirulings.com/api/keywordList/getEnglish").then(
+		Axios.get("http://localhost:3001/api/keywordList/getEnglish").then(
 			(resp) => {
 				setKeywordList(resp.data)
 			}
@@ -29,7 +35,7 @@ function MainComponent() {
 	/* Funcion de Keyword seleccionada */
 	const obtenerRulling = (e) => {
 		if (pageLanguage === 1) {
-			Axios.get("https://api.digirulings.com/api/getRullings/English", {
+			Axios.get("http://localhost:3001/api/getRullings/English", {
 				params: {
 					keywordSeleccionada: e.target.value,
 				},
@@ -38,7 +44,7 @@ function MainComponent() {
 			})
 		}
 		if (pageLanguage === 2) {
-			Axios.get("https://api.digirulings.com/api/getRullings/Spanish", {
+			Axios.get("http://localhost:3001/api/getRullings/Spanish", {
 				params: {
 					keywordSeleccionada: e.target.value,
 				},
@@ -51,8 +57,18 @@ function MainComponent() {
 	const setLanguage = (e) => {
 		if (pageLanguage === 2) {
 			setPageLanguage(1)
+			Axios.get("http://localhost:3001/api/keywordList/getEnglish").then(
+				(resp) => {
+					setKeywordList(resp.data)
+				}
+			)
 		} else if (pageLanguage === 1) {
 			setPageLanguage(2)
+			Axios.get("http://localhost:3001/api/keywordList/getSpanish").then(
+				(resp) => {
+					setKeywordList(resp.data)
+				}
+			)
 		}
 	}
 
@@ -111,6 +127,12 @@ function MainComponent() {
 									<button
 										onClick={(e) => {
 											handleRullingChange(e)
+											setKeywordSeleccionadaNombre(keyword.keyword_nombre)
+											setKeywordSeleccionadaDescrip(keyword.keyword_explanation)
+											setKeywordSeleccionadaDescripEsp(
+												keyword.keyword_explanation_spanish
+											)
+											setKeywordSeleccionadaId(keyword.keyword_id)
 										}}
 										key={`keyword${keyword.keyword_id}`}
 										id={`keyword${keyword.keyword_id}`}
@@ -125,7 +147,29 @@ function MainComponent() {
 						})}
 					</div>
 				</div>
-
+				<div
+					className={
+						keywordSeleccionadaNombre ? "rullingExplanation" : "hidden"
+					}
+				>
+					<div className="rullingDescription">
+						<div className="rullingTitle">
+							<h1>Keyword: {keywordSeleccionadaNombre}</h1>
+						</div>
+						<div className="rullingText">
+							{pageLanguage === 1
+								? keywordSeleccionadaDescrip
+								: keywordSeleccionadaDescripEsp}
+						</div>
+					</div>
+					<div className="rullingImage">
+						<img
+							src={keywordImages[keywordSeleccionadaId].img}
+							alt="text"
+							className="keywordImage"
+						></img>
+					</div>
+				</div>
 				{/* Rullings Container */}
 				{rullingsActuales.map((rulling) => {
 					return (
