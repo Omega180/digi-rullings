@@ -67,3 +67,17 @@
 	top: 0;
 	width: 100%;
 }
+
+@media (min-width: 300px) and (max-width: 400px) {
+	.navbarLogo {
+		width: 50px;
+	}
+	.title {
+		font-size: 20px;
+	}
+	.buttonClass {
+		font-size: 14px;
+		width: 80px;
+		height: 44px;
+	}
+}

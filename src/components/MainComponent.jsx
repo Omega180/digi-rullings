@@ -21,41 +21,10 @@ function MainComponent() {
 		)
 	}, [])
 
-	/* Manejo de keyword y lenguaje para formulario */
-	/* const handleKeywordChange = (e) => {
-		setSelectedKeyword(parseInt(e.target.value))
-
-	}
-	const handleLanguageChange = (e) => {
-		setSelectedLanguage(parseInt(e.target.value))
-	}
-	const handleOfficial = (e) => {
-		setSelectedOfficial(e.target.value)
-	}
-	const handlePregunta = (e) => {
-		setPregunta(e.target.value)
-
-	}
-	*/
 	const handleRullingChange = (e) => {
 		setRullingSolicitado(parseInt(e.target.value))
 		obtenerRulling(e)
 	}
-
-	/*
-	const handlePageLanguagechange = (e) => {}
-	/* Funcion de envio de formulario */
-
-	/* const enviarRulling = (e) => {
-		e.preventDefault()
-		Axios.post("https://api.digirulings.com/api/sendRulling", {
-			keyword: selectedKeyword,
-			lenguaje: selectedLanguage,
-			oficial: "Yes",
-			pregunta: pregunta,
-			respuesta: respuesta,
-		})
-	} */
 
 	/* Funcion de Keyword seleccionada */
 	const obtenerRulling = (e) => {
@@ -146,7 +115,7 @@ function MainComponent() {
 										key={`keyword${keyword.keyword_id}`}
 										id={`keyword${keyword.keyword_id}`}
 										className="linkKeyword"
-										href="#"
+										href="#rulingCard"
 										value={keyword.keyword_id}
 									>
 										{keyword.keyword_nombre}
@@ -160,7 +129,11 @@ function MainComponent() {
 				{/* Rullings Container */}
 				{rullingsActuales.map((rulling) => {
 					return (
-						<div key={`rulling${rulling.question}`} className="card mt-2 ">
+						<div
+							key={`rulling${rulling.question}`}
+							id="rulingCard"
+							className="card mt-2 "
+						>
 							<div className="card-title cardTitle m-3">{rulling.question}</div>
 							<div className="card-body mt-3 cardText border">
 								{rulling.answer}
@@ -175,7 +148,3 @@ function MainComponent() {
 }
 
 export default MainComponent
-
-/* 
-
-*/

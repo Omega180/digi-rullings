@@ -6,15 +6,11 @@ function DisclamerComponent(props) {
 	const [pageLanguage, setPageLanguage] = useState(1)
 	const setLanguage = (e) => {
 		if (pageLanguage === 2) {
-			console.log(pageLanguage)
 			setPageLanguage(1)
 		} else if (pageLanguage === 1) {
-			console.log(pageLanguage)
 			setPageLanguage(2)
 		}
 	}
-	const location = useLocation()
-	const {from} = location.state
 
 	return (
 		<div className="container-fluid d-flex justify-content-center disclamerContainer">
@@ -33,9 +29,9 @@ function DisclamerComponent(props) {
 							</p>
 							<div className="d-flex justify-content-center align-items-center">
 								<p className="titleRulings m-2">EN</p>
-								<label class="switch">
+								<label className="switch">
 									<input type="checkbox" onClick={setLanguage} />
-									<span class="slider"></span>
+									<span className="slider"></span>
 								</label>
 								<p className="titleRulings m-2">ES</p>
 							</div>
@@ -44,6 +40,11 @@ function DisclamerComponent(props) {
 							className="card-body 
 						"
 						>
+							<p className="disclamerText">
+								{pageLanguage === 1
+									? "Copyright 2022 Ciro Delgado"
+									: "Copyright 2022 Ciro Delgado"}
+							</p>
 							<p className="disclamerText">
 								{pageLanguage === 1
 									? `-This page is my first decent-ish size project, so if something
